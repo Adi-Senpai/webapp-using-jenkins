@@ -10,7 +10,6 @@ class Logs(db.Model):
     sno=db.Column(db.Integer,primary_key=True,autoincrement=True)
     email=db.Column(db.String(20),nullable=False)
     password=db.Column(db.String(20))
-
 @app.route('/',methods=['GET','POST'])
 def home():
     if request.method == 'POST':
