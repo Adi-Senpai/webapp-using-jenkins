@@ -1,0 +1,11 @@
+node {
+    checkout scm
+
+    docker.withRegistry('https://registry.hub.docker.com', 'b79432cb-d8b2-4851-a7a7-e7b11ef7dcce') {
+
+        def customImage = docker.build("adiisenpai/webapp")
+
+        /* Push the container to the custom Registry */
+        customImage.push()
+    }
+}
